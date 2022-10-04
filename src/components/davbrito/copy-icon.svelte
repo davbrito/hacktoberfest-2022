@@ -1,8 +1,10 @@
 <script>
 	export let size = '1em'
+	export let hovering = false
 </script>
 
 <svg
+	class:hovering
 	stroke="currentColor"
 	fill="currentColor"
 	stroke-width="0"
@@ -16,3 +18,14 @@
 		d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
 	/>
 </svg>
+
+<style>
+	svg {
+		transition: transform 300ms 100ms ease-in-out;
+		transform: scale(1);
+	}
+
+	svg.hovering {
+		transform: scale(1.15);
+	}
+</style>
